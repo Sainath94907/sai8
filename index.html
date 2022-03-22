@@ -8,26 +8,33 @@
     
     
 </head>
-<body class="container">
-    <div class="header">TicTacToe/reset button
+<body>
+    <div class="container">
+        <div class="header">TicTacToe/reset button
+        </div>
+
+        <div class="startScreen" id="start">
+            <button>Play TicTacToe!</button>
+            <input id="name1" placeholder="Enter your name player 1!">
+            <input id="name2" placeholder="Enter your name player 2!">
+        </div>
+        <div class="players">
+            <div class="p1" id="player1"></div> 
+            <div class="p2" id="player2"></div>
+        </div>
+        <div class="board">
+            <div class="block cell1" id="cell1"></div>
+            <div class="block cell1" id="cell2"></div>
+            <div class="block cell1" id="cell3"></div>
+            <div class="block cell2" id="cell4"></div>
+            <div class="block cell2" id="cell5"></div>
+            <div class="block cell2" id="cell6"></div>
+            <div class="block cell3" id="cell7"></div>
+            <div class="block cell3" id="cell8"></div>
+            <div class="block cell3" id="cell9"></div>
+        </div>
+        <div class="message" id="prompter"></div>
     </div>
-    <div class="players">
-        <div class="p1" id="player1">Player 1</div> 
-        <div class="p2" id="player2">Player 2</div>
-    </div>
-    <div class="board">
-        <div class="block cell1" id="cell1"></div>
-        <div class="block cell1" id="cell2"></div>
-        <div class="block cell1" id="cell3"></div>
-        <div class="block cell2" id="cell4"></div>
-        <div class="block cell2" id="cell5"></div>
-        <div class="block cell2" id="cell6"></div>
-        <div class="block cell3" id="cell7"></div>
-        <div class="block cell3" id="cell8"></div>
-        <div class="block cell3" id="cell9"></div>
-    </div>
-    <div class="message" id="prompt">Prompter (who wins/ whos turn)</div>
-    
 </body>
 <script src="js/jquery.js"></script>
 <script src="js/logic.js"></script>

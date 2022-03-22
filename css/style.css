@@ -1,42 +1,59 @@
 * {
     border: 0.5px solid limegreen;
     box-sizing: border-box;
+    border-radius: 10px 10px 10px 10px;
+    color: whitesmoke;
 }
+
+.onScreen{
+    pointer-events: none;
+    opacity: 0.2;
+}
+
+body {
+    background-color: #FFE9F1;
+    max-height: 100%;
+}   
 
 .container {
     width: 960px;
     position: relative;
     margin: 0 auto;
+    background-color: #e0fbfc;
 }
 
 .board {
-    width: 460px;
+    width: 600px;
+    height: 600px;
     margin: 0 auto;
     position: relative;
-    margin-top: 100px;
+    margin-top: 20px;
+    background-image: url('../img/tictacboard.png');
+    background-size: cover;
+    
 }
 
 .cell1 {
     width: 150px;
     height: 150px;
-    border: 5px solid black;
-    margin: 0 auto;
     display: inline-block;
+    position: relative;
+    margin: 20px 10px 10px 35px;
 }
 
 .cell2 {
     width: 150px;
     height: 150px;
-    border: 5px solid black;
-    margin: 0 auto;
+    position: relative;
+    margin: 45px 10px 10px 35px;
     display: inline-block;
 }
 
 .cell3 {
     width: 150px;
     height: 150px;
-    border: 5px solid black;
-    margin: 0 auto;
+    position: relative;
+    margin: 40px 10px 10px 30px;
     display: inline-block;
 }
 
@@ -46,9 +63,11 @@
 
 .message {
     width: 960px;
-    height: 200px;
+    height: 100px;
+    top: 20px;
     position: relative;
     margin: 0 auto;
+    background-color: #E44650;
 }
 
 .players {
@@ -56,6 +75,7 @@
     height: 80px;
     margin: 0 auto;
     display: inline-block;
+    background-color: #F8A8C5;
 }
 
 .p1 {
@@ -76,5 +96,6 @@
 .header {
     width: 960px;
     height: 80px;
-    
+    background-color: #E44650;
 }
+

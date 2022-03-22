@@ -42,129 +42,71 @@ const cells = {
         $('.block').empty();
     },
     player1Turn : function(){
-        $('<img src="http://www.fillmurray.com/150/150">').appendTo(button);
-        $(button).addClass('unclickable');
+        $('<img src="http://www.fillmurray.com/150/150">').appendTo(`#cell${button}`);
+        $(`#cell${button}`).addClass('unclickable');
         cells.checkCells();
         playerTurn = false;
     },
     player2Turn : function(){
-        $('<img src="http://www.placebear.com/150/150">').appendTo(button);
-        $(button).addClass('unclickable');
+        $('<img src="http://www.placebear.com/150/150">').appendTo(`#cell${button}`);
+        $(`#cell${button}`).addClass('unclickable');
         cells.checkCells();
         playerTurn = true;
+    },
+    playerInput : function(){
+        if (playerTurn) {
+            cells[`c${button}`] = p1;
+            cells.player1Turn();
+        }  
+         else {
+            cells[`c${button}`] = p2;
+            cells.player2Turn();
+        }
     }
 }
 
 
 
 $('#cell1').on('click', function(){
-    button = '#cell1'
-    if (playerTurn) {
-        cells.c1 = p1;
-        cells.player1Turn();
-    }  
-     else {
-        cells.c1 = p2;
-        cells.player2Turn();
-    }
+    button = 1
+    cells.playerInput();
 });
 
 $('#cell2').on('click', function(){
-    button = '#cell2'
-    if (playerTurn) {
-        cells.c2 = p1;
-       cells.player1Turn()
-    } 
-    else {
-        cells.c2 = p2;
-        cells.player2Turn();
-    }
+    button = 2
+    cells.playerInput();
 });
 
 $('#cell3').on('click', function(){
-    button = '#cell3'
-    if (playerTurn) {
-        cells.c3 = p1;
-        cells.player1Turn()
-    } 
-    else {
-        cells.c3 = p2;
-        cells.player2Turn();
-    }
+    button = 3
+    cells.playerInput();
 });
 
 $('#cell4').on('click', function(){
-    button = '#cell4'
-    if (playerTurn) {
-        cells.c4 = p1;
-        cells.player1Turn()
-    } 
-    else {
-        cells.c4 = p2;
-        cells.player2Turn();
-    }
+    button = 4
+    cells.playerInput();
 });
-
 $('#cell5').on('click', function(){
-    button = '#cell5'
-    if (playerTurn) {
-        cells.c5 = p1;
-        cells.player1Turn()
-    } 
-    else {
-        cells.c5 = p2;
-        cells.player2Turn();
-    }
+    button = 5
+    cells.playerInput();
 });
-
 $('#cell6').on('click', function(){
-    button = '#cell6'
-    if (playerTurn) {
-        cells.c6 = p1;
-        cells.player1Turn()
-    } 
-    else {
-        cells.c6 = p2;
-        cells.player2Turn();
-    }
+    button = 6
+    cells.playerInput();
 });
-
 $('#cell7').on('click', function(){
-    button = '#cell7'
-    if (playerTurn) {
-        cells.c7 = p1;
-        cells.player1Turn()
-    } 
-    else {
-        cells.c7 = p2;
-        cells.player2Turn();
-    }
+    button = 7
+    cells.playerInput();
 });
 
 $('#cell8').on('click', function(){
-    button = '#cell8'
-    if (playerTurn) {
-        cells.c8 = p1;
-        cells.player1Turn()
-    } 
-    else {
-        cells.c8 = p2;
-        cells.player2Turn();
-    }
+    button = 8
+    cells.playerInput();
 });
-
 $('#cell9').on('click', function(){
-    button = '#cell9'
-    if (playerTurn) {
-        cells.c9 = p1;
-        cells.player1Turn()
-    } 
-    else {
-        cells.c9 = p2;
-        cells.player2Turn();
-    }
+    button = 9
+    cells.playerInput();
 });
-
 
 
 

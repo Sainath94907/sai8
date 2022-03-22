@@ -1,0 +1,80 @@
+* {
+    border: 0.5px solid limegreen;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 960px;
+    position: relative;
+    margin: 0 auto;
+}
+
+.board {
+    width: 460px;
+    margin: 0 auto;
+    position: relative;
+    margin-top: 100px;
+}
+
+.cell1 {
+    width: 150px;
+    height: 150px;
+    border: 5px solid black;
+    margin: 0 auto;
+    display: inline-block;
+}
+
+.cell2 {
+    width: 150px;
+    height: 150px;
+    border: 5px solid black;
+    margin: 0 auto;
+    display: inline-block;
+}
+
+.cell3 {
+    width: 150px;
+    height: 150px;
+    border: 5px solid black;
+    margin: 0 auto;
+    display: inline-block;
+}
+
+.unclickable{
+    pointer-events: none;
+}
+
+.message {
+    width: 960px;
+    height: 200px;
+    position: relative;
+    margin: 0 auto;
+}
+
+.players {
+    width: 960px;
+    height: 80px;
+    margin: 0 auto;
+    display: inline-block;
+}
+
+.p1 {
+    width: 400px;
+    height: 80px;
+    display: inline;
+    position: absolute;
+    left: 0px
+}
+.p2 {
+    width: 400px;
+    height: 80px;
+    display: inline;
+    position: absolute;
+    right: 0px
+}
+
+.header {
+    width: 960px;
+    height: 80px;
+    
+}

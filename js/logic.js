@@ -2,20 +2,23 @@
 
 const p1 = true
 const p2 = false
+let playerTurn = true
+let button = ''
 
 const cells = {
-    c1:'',c2: p2,c3: p2,
+    c1:'',c2: '',c3: '',
     c4:'',c5:'',c6:'',
     c7:'',c8:'',c9:'',
 
     checkCells: function (){
-        if ((this.c1 === this.c2 === this.c3)
+        if ((this.c1 && this.c2 && this.c3)
             
         ){
             console.log('player 1 wins')
+            //this.clearCells();
         }
 
-        if ((!this.c1 === !this.c2 === !this.c3)
+        if ((!this.c1 && !this.c2 && !this.c3)
             
         ){
             console.log('player 2 wins')
@@ -26,114 +29,138 @@ const cells = {
         this.c4 = ''; this.c5= ''; this.c6 = '';
         this.c7 = ''; this.c8 = ''; this.c9 = '';
         $('.block').removeClass('unclickable');
+    },
+    player1Turn : function(){
+        $('<img src="http://www.fillmurray.com/150/150">').appendTo(button);
+        $(button).addClass('unclickable');
+        cells.checkCells();
+        playerTurn = false;
+    },
+    player2Turn : function(){
+        $('<img src="http://www.placebear.com/150/150">').appendTo(button);
+        $(button).addClass('unclickable');
+        cells.checkCells();
+        playerTurn = true;
     }
+
 }
 
 
-let player1 = false
-let button = ''
-const player1Turn = function(){
-    $(button).addClass('unclickable');
-    $('<img src="http://www.fillmurray.com/150/150">').appendTo(button)
-    cells.checkCells();
-}
 
-const player2Turn = function(){
-    $(button).addClass('unclickable');
-    $('<img src="http://www.placebear.com/150/150">').appendTo(button)
-    cells.checkCells();
-}
 
 $('#cell1').on('click', function(){
     button = '#cell1'
-    if (player1 = true) {
+    if (playerTurn) {
         cells.c1 = p1;
-        player1Turn();
-        return player1 = false
-    } else {
+        cells.player1Turn();
+    }  
+     else {
         cells.c1 = p2;
-        player2Turn();
-        return player1 = true
+        cells.player2Turn();
     }
-})
+});
+
+$('#cell2').on('click', function(){
+    button = '#cell2'
+    if (playerTurn) {
+        cells.c2 = p1;
+       cells.player1Turn()
+    } 
+    else {
+        cells.c2 = p2;
+        cells.player2Turn();
+    }
+});
+
+$('#cell3').on('click', function(){
+    button = '#cell3'
+    if (playerTurn) {
+        cells.c3 = p1;
+        cells.player1Turn()
+    } 
+    else {
+        cells.c3 = p2;
+        cells.player2Turn();
+    }
+});
+
+$('#cell4').on('click', function(){
+    button = '#cell4'
+    if (playerTurn) {
+        cells.c4 = p1;
+        cells.player1Turn()
+    } 
+    else {
+        cells.c4 = p2;
+        cells.player2Turn();
+    }
+});
+
+$('#cell5').on('click', function(){
+    button = '#cell5'
+    if (playerTurn) {
+        cells.c5 = p1;
+        cells.player1Turn()
+    } 
+    else {
+        cells.c5 = p2;
+        cells.player2Turn();
+    }
+});
+
+$('#cell6').on('click', function(){
+    button = '#cell6'
+    if (playerTurn) {
+        cells.c6 = p1;
+        cells.player1Turn()
+    } 
+    else {
+        cells.c6 = p2;
+        cells.player2Turn();
+    }
+});
+
+$('#cell7').on('click', function(){
+    button = '#cell7'
+    if (playerTurn) {
+        cells.c7 = p1;
+        cells.player1Turn()
+    } 
+    else {
+        cells.c7 = p2;
+        cells.player2Turn();
+    }
+});
+
+$('#cell8').on('click', function(){
+    button = '#cell8'
+    if (playerTurn) {
+        cells.c8 = p1;
+        cells.player1Turn()
+    } 
+    else {
+        cells.c8 = p2;
+        cells.player2Turn();
+    }
+});
+
+$('#cell9').on('click', function(){
+    button = '#cell9'
+    if (playerTurn) {
+        cells.c9 = p1;
+        cells.player1Turn()
+    } 
+    else {
+        cells.c9 = p2;
+        cells.player2Turn();
+    }
+});
+
+
+
 
 //function to randomly choose which player goes first / if else Math.Random
 
 
 
 
-// let player1 = true
-
-// const playerTurn = function() {
-//     if (player1 = true){
-//         player1Turn();
-//         return player1 = false
-//     } else {
-//         player2Turn()
-//         return player1 = true
-//     }   
-// }
-
-// const player1Turn = function(){
-// $('#cell1').on('click', function(){
-//     cells.c1 = p1;
-//     $('#cell1').addClass('unclickable');
-//     $('<img src="http://www.fillmurray.com/150/150">').appendTo('#cell1')
-//     cells.checkCells();
-//     playerTurn();
-//     return player1 = false
-    
-// });
-// $('#cell6').on('click', function(){
-//     cells.c3 = p1;
-//     $('#cell6').addClass('unclickable');
-//     $('<img src="http://www.fillmurray.com/150/150">').appendTo('#cell6')
-//     cells.checkCells();
-//     playerTurn();
-// });
-// }
-
-// const player2Turn = function(){
-// $('#cell2').on('click', function(){
-//     cells.c2 = p2;
-//     $('#cell2').addClass('unclickable');
-//     $('<img src="http://www.placebear.com/150/150">').appendTo('#cell2')
-//     cells.checkCells();
-//     return player1 = true
-//     playerTurn();
-// });
-// }
-// $('#cell9').on('click', function(){
-//     cells.c = p2;
-//     $('#cell9').addClass('unclickable');
-//     $('<img src="http://www.placebear.com/150/150">').appendTo('#cell9')
-//     cells.checkCells();
-//     player1Turn();
-// });
-
-
-// player1Turn();
-
-// $('#cell2').on('click', function(){
-//     cells.c2 = p2
-//     console.log('heyooooo');
-// })
-
-// const pInput = function (){
-    
-// }
-// const check
-
-// const cellss = [
-//     ['','',''],
-//     ['','',''],
-//     ['','','']
-// ];
-
-// const clearCells = function(){
-//     for (let i = 0; i < 3 ; i++){
-//         for (let j = 0; j < 3 ; j++){
-//         cells[i][j] = '';
-//         }
-//     }
-// }

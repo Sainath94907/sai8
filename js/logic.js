@@ -97,13 +97,41 @@ const cells = {
     nameCheck : function(){
         if ($('#name1').val() === '' || $('#name2').val() === ''){
             $('#prompter').text('Welcome!\n Please enter your names first!');
-        } else {
-            $('#prompter').text(`It's ${$('.px').val()}'s turn!`);
+        } else { 
+            this.whosFirst();
+        }
+    },
+    whosFirst : function(){
+        $('.whosTurn').css('visibility', 'visible');
+        $('input').addClass('unclickable');
+        
+        $('#x').on('click', function(){
+            playerTurn = true;
+            $('#prompter').text(`It's ${$('#name1').val()}'s turn!`);       
+            $('#gameRounds').text(`Round ${cells.round}`);
+            $('.whosTurn').css('visibility', 'hidden');
             $('.block').removeClass('unclickable');
-            $('#gameRounds').text(`Round ${this.round}`);
+        });
+        $('#o').on('click', function(){
+            playerTurn = false;
+            $('#prompter').text(`It's ${$('#name2').val()}'s turn!`);
+            $('#gameRounds').text(`Round ${cells.round}`);
+            $('.whosTurn').css('visibility', 'hidden');
+            $('.block').removeClass('unclickable');
+            
+        });
+    },
+    whoWins : function(){
+        if (this.score1 > this.score2){
+            $('#winner').text(`${$('#name1').val()} IS THE WINNER!`);
+        } else
+        if (this.score1 < this.score2){
+            $('#winner').text(`${$('#name2').val()} IS THE WINNER!`);
+        } else
+        if (this.score1 === this.score2){
+            $('#winner').text(`IT'S A DRAW!`);
         }
     }
-    
 }
 
 

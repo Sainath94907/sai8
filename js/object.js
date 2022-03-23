@@ -1,11 +1,11 @@
 $('.starter').on('click', function(){
-    $('.starter').css('visibility', 'hidden');  
+    $('#start').css('visibility', 'hidden');  
     $('.container').removeClass('offScreen');
     $('.block').addClass('unclickable');
     cells.nameCheck();
 })
 
-$('input').on('keyup', function(){
+$('input').on('focusout', function(){
     cells.nameCheck();
 });
 
@@ -53,11 +53,21 @@ $('#cell9').on('click', function(){
 
 
 $('#restart').on('click', function(){
+    cells.whosFirst();
     cells.clearCells();
     cells.round += 1;
     $('#gameRounds').text(`Round ${cells.round}`);
-})
+    $('.block').addClass('unclickable');
+});
 
 $('#close').on('click', function(){
-    cells.restartGame();
+    cells.whoWins();
+    $('.container').addClass('offScreen');
+    $('#winner').css('visibility', 'visible');
+});
+
+$('#winner').on('click', function(){
+        cells.restartGame()
+        $('input').removeClass('unclickable'); 
+        $('#winner').css('visibility', 'hidden')
 })

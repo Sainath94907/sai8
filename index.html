@@ -11,21 +11,22 @@
 <body>
     <div class="startScreen" id="start">
         <button class="startInputs starter">Play TicTacToe!</button>
-        
     </div>
     <div class="container offScreen">
-        <div class="header">TicTacToe/reset button
-        </div>
+        <nav class="header">
+            <div class="game" id="title">TicTacToe/reset button</div>
+            <div class="rounds" id="gameRounds"></div>
+        </nav>
 
-        
         <div class="players">
             <div class="p1" id="player1">
                 <input class="px" id="name1" placeholder="Enter your name player X!">
             </div> 
             <div class="p2" id="player2">
                 <input class="po" id="name2" placeholder="Enter your name player 0!">
-
             </div>
+            <div class="score" id="p1s"></div>
+            <div class="score" id="p2s"></div>
         </div>
         <div class="board">
             <div class="block cell1" id="cell1"></div>
@@ -37,6 +38,10 @@
             <div class="block cell3" id="cell7"></div>
             <div class="block cell3" id="cell8"></div>
             <div class="block cell3" id="cell9"></div>
+        </div>
+        <div class="sideButtons">
+            <button class="res" id="restart"></button>
+            <button class="clo" id="close"></button>
         </div>
         <div class="message" id="prompter"></div>
     </div>

@@ -10,48 +10,54 @@ $('input').on('keyup', function(){
 });
 
 
-
-
-
-
-
 $('#cell1').on('click', function(){
-    cells.button = 1
+    cells.button = 1;
     cells.playerInput();
 });
 
 $('#cell2').on('click', function(){
-    cells.button = 2
+    cells.button = 2;
     cells.playerInput();
 });
 
 $('#cell3').on('click', function(){
-    cells.button = 3
+    cells.button = 3;
     cells.playerInput();
 });
 
 $('#cell4').on('click', function(){
-    cells.button = 4
+    cells.button = 4;
     cells.playerInput();
 });
 $('#cell5').on('click', function(){
-    cells.button = 5
+    cells.button = 5;
     cells.playerInput();
 });
 $('#cell6').on('click', function(){
-    cells.button = 6
+    cells.button = 6;
     cells.playerInput();
 });
 $('#cell7').on('click', function(){
-    cells.button = 7
+    cells.button = 7;
     cells.playerInput();
 });
 
 $('#cell8').on('click', function(){
-    cells.button = 8
+    cells.button = 8;
     cells.playerInput();
 });
 $('#cell9').on('click', function(){
-    cells.button = 9
+    cells.button = 9;
     cells.playerInput();
 });
+
+
+$('#restart').on('click', function(){
+    cells.clearCells();
+    cells.round += 1;
+    $('#gameRounds').text(`Round ${cells.round}`);
+})
+
+$('#close').on('click', function(){
+    cells.restartGame();
+})

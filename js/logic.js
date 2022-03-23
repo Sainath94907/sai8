@@ -19,7 +19,7 @@ const cells = {
             (this.c7 && this.c4 && this.c1) ||
             (this.c2 && this.c5 && this.c8) ||
             (this.c4 && this.c5 && this.c6)){
-            $('#prompter').text(`Congratulations ${$('#player1').text()}!`);
+            $('#prompter').text(`Congratulations ${$('.px').val()}!`);
             $('.block').addClass('unclickable');
         } else 
         if ((this.c1 === false && this.c5 === false && this.c9 === false) ||
@@ -30,7 +30,7 @@ const cells = {
             (this.c7 === false && this.c4 === false && this.c1 === false) ||
             (this.c2 === false && this.c5 === false && this.c8 === false) ||
             (this.c4 === false && this.c5 === false && this.c6 === false)){
-            $('#prompter').text(`Congratulations ${$('#player2').text()}!`);
+            $('#prompter').text(`Congratulations ${$('.po').val()}!`);
             $('.block').addClass('unclickable');
         } else
         if (this.moves === 8) {
@@ -49,14 +49,14 @@ const cells = {
     player1Turn : function(){
         $('<img src="img/X.png" width="140">').appendTo(`#cell${this.button}`);
         $(`#cell${this.button}`).addClass('unclickable');
-        $('#prompter').text(`It's ${$('#player2').text()}'s turn!`)
+        $('#prompter').text(`It's ${$('.po').val()}'s turn!`)
         cells.checkCells();
         playerTurn = false;
     },
     player2Turn : function(){
         $('<img src="img/O.png" width="140">').appendTo(`#cell${this.button}`);
         $(`#cell${this.button}`).addClass('unclickable');
-        $('#prompter').text(`It's ${$('#player1').text()}'s turn!`);
+        $('#prompter').text(`It's ${$('.px').val()}'s turn!`);
         cells.checkCells();
         playerTurn = true;
     },
@@ -70,6 +70,14 @@ const cells = {
             cells[`c${this.button}`] = false;
             cells.player2Turn();
             this.moves += 1;
+        }
+    }, 
+    nameCheck : function(){
+        if ($('#name1').val() === '' || $('#name2').val() === ''){
+            $('#prompter').text('Welcome!\n Please enter your names first!');
+        } else {
+            $('#prompter').text(`It's ${$('.px').val()}'s turn!`);
+            $('.block').removeClass('unclickable');
         }
     }
     

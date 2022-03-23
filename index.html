@@ -9,18 +9,23 @@
     
 </head>
 <body>
-    <div class="container">
+    <div class="startScreen" id="start">
+        <button class="startInputs starter">Play TicTacToe!</button>
+        
+    </div>
+    <div class="container offScreen">
         <div class="header">TicTacToe/reset button
         </div>
 
-        <div class="startScreen" id="start">
-            <button>Play TicTacToe!</button>
-            <input id="name1" placeholder="Enter your name player 1!">
-            <input id="name2" placeholder="Enter your name player 2!">
-        </div>
+        
         <div class="players">
-            <div class="p1" id="player1"></div> 
-            <div class="p2" id="player2"></div>
+            <div class="p1" id="player1">
+                <input class="px" id="name1" placeholder="Enter your name player X!">
+            </div> 
+            <div class="p2" id="player2">
+                <input class="po" id="name2" placeholder="Enter your name player 0!">
+
+            </div>
         </div>
         <div class="board">
             <div class="block cell1" id="cell1"></div>

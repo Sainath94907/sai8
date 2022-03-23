@@ -1,3 +1,20 @@
+$('.starter').on('click', function(){
+    $('.starter').css('visibility', 'hidden');  
+    $('.container').removeClass('offScreen');
+    $('.block').addClass('unclickable');
+    cells.nameCheck();
+})
+
+$('input').on('keyup', function(){
+    cells.nameCheck();
+});
+
+
+
+
+
+
+
 $('#cell1').on('click', function(){
     cells.button = 1
     cells.playerInput();

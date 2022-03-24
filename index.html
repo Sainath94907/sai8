@@ -9,25 +9,25 @@
     
 </head>
 <body>
-    <div class="startScreen" id="start">
+    <header class="startScreen" id="start">
         <button class="startInputs starter">Play TicTacToe!</button>
-    </div>
+    </header>
     <div class="whosTurn">
         <button class="turn" id="x"></button>
         <button class="turn" id="o"></button>
     </div>
-    <div class="container offScreen">
+    <section class="container offScreen">
         <nav class="header">
-            <div class="game" id="title">TicTacToe/reset button</div>
+            <div class="game" id="title">TicTacToe</div>
             <div class="rounds" id="gameRounds"></div>
         </nav>
 
         <div class="players">
             <div class="p1" id="player1">
-                <input class="px" id="name1" placeholder="Enter your name player X!">
+                <input class="px" id="name1" placeholder="Player X Name!">
             </div> 
             <div class="p2" id="player2">
-                <input class="po" id="name2" placeholder="Enter your name player 0!">
+                <input class="po" id="name2" placeholder="Player O Name!">
             </div>
             <div class="score" id="p1s"></div>
             <div class="score" id="p2s"></div>
@@ -47,9 +47,13 @@
             <button class="res" id="restart"></button>
             <button class="clo" id="close"></button>
         </div>
-        <div class="message" id="prompter"></div>
+        <footer class="message" id="prompter">
+            <div class="textM" id="promptM"></div>
+        </footer>
+    </section>
+    <div class="winImg">
+        <div class="winScreen" id="winner"></div>
     </div>
-    <div class="winScreen" id="winner"></div>
 </body>
 <script src="js/jquery.js"></script>
 <script src="js/logic.js"></script>

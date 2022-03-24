@@ -1,5 +1,18 @@
+$('#restart').append('<img src="img/restart.png">');
+$('#close').append('<img src="img/close.png">');
+$('#prompter').append('<img src="img/banner.png">');
+$('.header').append('<img src="img/banner1.png">');
+$('#start').append('<img src="img/start.png">');
+$('.winImg').append('<img src="img/win.png">');
+$('#x').append('<img src="img/X.png">');
+$('#o').append('<img src="img/O.png">');
+$('.players').append('<img class="tokenx" src="img/X.png">');
+$('.players').append('<img class="tokeno" src="img/O.png">');
+
+
 $('.starter').on('click', function(){
-    $('#start').css('visibility', 'hidden');  
+    $('#start').css('visibility', 'hidden');
+    $('.starter').css('visibility', 'hidden');
     $('.container').removeClass('offScreen');
     $('.block').addClass('unclickable');
     cells.nameCheck();
@@ -8,7 +21,6 @@ $('.starter').on('click', function(){
 $('input').on('focusout', function(){
     cells.nameCheck();
 });
-
 
 $('#cell1').on('click', function(){
     cells.button = 1;
@@ -53,6 +65,7 @@ $('#cell9').on('click', function(){
 
 
 $('#restart').on('click', function(){
+    cells.navTop();
     cells.whosFirst();
     cells.clearCells();
     cells.round += 1;
@@ -61,13 +74,16 @@ $('#restart').on('click', function(){
 });
 
 $('#close').on('click', function(){
+    cells.navTop();
     cells.whoWins();
-    $('.container').addClass('offScreen');
-    $('#winner').css('visibility', 'visible');
+    $('#restart').css('visibility','hidden');
 });
 
 $('#winner').on('click', function(){
         cells.restartGame()
         $('input').removeClass('unclickable'); 
-        $('#winner').css('visibility', 'hidden')
-})
+        $('.winImg').css('visibility', 'hidden');
+        $('#winner').css('visibility', 'hidden');
+});
+
+

@@ -2,14 +2,48 @@
 
 
 * {
-    border: 0.5px solid limegreen;
     box-sizing: border-box;
     border-radius: 10px 10px 10px 10px;
     color: whitesmoke;
     font-family: 'Patrick Hand SC', cursive;
-    font-size: 110%;
     text-align: center;
+    transition: 0.3s all;
+    transition-property: opacity, transform;
+}
 
+button {
+    border: none;
+    outline: none;
+}
+
+@keyframes bounce {
+    0%, 25%, 50%, 75%, 90%, 100% {
+    transform: translateY(0); }
+    15%,40% {
+    transform: translateY(-20px); }
+    65% ,80% {
+    transform: translateY(-15px); }
+    95% {
+    transform: translateY(-5px); } }
+
+button {
+    animation: bounce 5s linear;
+    animation-iteration-count: infinite;
+}
+
+body {
+    background-color: #e0e7eb;
+    width: 100vw;
+    height: 100vh;
+}   
+
+.container {
+    width: 960px;
+    height: 100%;
+    position: relative;
+    top: 5px;
+    margin: 0 auto;
+    background-color: #e0fbfc;
 }
 
 .startScreen {
@@ -18,18 +52,20 @@
     position: absolute;
     top: 40%;
     visibility: visible;
+    z-index: 99;
 }
 
 .starter {
     height: 70%;
-    width: 40%;
+    width: 70%;
     display: block;
-    font-size: 200%;
-    color: black;
+    font-size: 6vh;
+    color: whitesmoke;
     position: absolute;
-    top: 15%;
-    right: 30%;
+    top: 12%;
+    right: 15%;
     visibility: inherit;
+    background: transparent;
 }
 
 .whosTurn {
@@ -41,69 +77,192 @@
 }
 
 .turn {
-    height: 50%;
-    width: 20%;
+    height: 20vh;
+    aspect-ratio: 1/1;
     display: inline-block;
     font-size: 200%;
     color: black;
     visibility: inherit;
     position: relative;
     margin: 0 auto;
-    top: 30%;
-    z-index: 999;
+    top: 10%;
+    z-index: 99;
+    background: transparent
+}
+
+.turn:hover {
+    height: 27vh;
+    aspect-ratio: 1/1;
 }
 
 .offScreen{
     pointer-events: none;
-    opacity: 0.2;
+    opacity: .1;
+    z-index: 1;
 }
 
-body {
-    background-color: #FFE9F1;
-    max-height: 100%;
-    
-}   
+.header {
+    width: 100%;
+    height: 90px;
+    background-color: transparent;
+}
 
-.container {
-    width: 960px;
-    position: relative;
+.game {
+    width: 60%;
+    height: 80px;
+    position: absolute;
+    left: 10%;
+    top: -7px;
+    font-size: 70px;
+    text-align: left;
+}
+
+.rounds {
+    width: 30%;
+    height: 80px;
+    position: absolute;
+    top: -8px;
+    right: 0px;
+    font-size: 60px;
+}
+
+.score {
+    height: 80%;
+    aspect-ratio: 1/1;
+    position:relative;
     margin: 0 auto;
-    background-color: #e0fbfc;
+    display: inline-block;
+    top: -10px;
+    font-size: 80px;
+}
+
+#p1s {
+    position:relative;
+    right: 10px;
+}
+
+#p2s {
+    position:relative;
+    left: 10px;
+}
+
+.players {
+    width: 100%;
+    height: 101px;
+    margin: 0 auto;
+    display: inline-block;
+    background-color: transparent;
+    background-image: url(../img/banner1.png);
+    background-size: contain;
+    background-position-x: 3px;
+}
+
+.p1 {
+    width: 40%;
+    height: 90px;
+    display: inline-block;
+    position: absolute;
+    top: 90px;
+    left: 2%;
+}
+
+.p2 {
+    width: 40%;
+    height: 90px;
+    display: inline-block;
+    position: absolute;
+    top: 90px;
+    right: 2%;
+}
+
+.px
+{
+    width: 80%;
+    height: 90px;
+    position: absolute;
+    left: 0%;
+    background: transparent;
+    border: none;
+    font-size: 50px;
+}
+
+.po
+{
+    width: 80%;
+    height: 90px;
+    position: absolute;
+    right: 0px;
+    background: transparent;
+    border: none;
+    font-size: 50px;
+}
+
+.tokenx {
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    top: 110px;
+    left: 325px;
+    background: transparent;
+    filter: invert(1);
+}
+
+.tokenx:hover {
+    animation: bounce 2s linear;
+}
+
+.tokeno {
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    top: 110px;
+    right: 325px;
+    background: transparent;
+    filter: invert(1);
+}
+
+.tokeno:hover {
+    animation: bounce 2s linear;
 }
 
 .board {
-    width: 600px;
-    height: 600px;
+    height: 50%;
+    aspect-ratio: 1/1;
     margin: 0 auto;
     position: relative;
-    margin-top: 20px;
+    top: 4%;
+    right: 4%;
     background-image: url('../img/tictacboard.png');
-    background-size: cover;
-    
+    background-size: contain;
 }
 
 .cell1 {
-    width: 150px;
-    height: 150px;
+    width: 25%;
+    aspect-ratio: 1/1;
     display: inline-block;
     position: relative;
-    margin: 20px 10px 10px 35px;
+    margin: 5% 2% 2% 3%;
+    contain:content;
+    
+    
 }
 
 .cell2 {
-    width: 150px;
-    height: 150px;
-    position: relative;
-    margin: 45px 10px 10px 35px;
+    width: 25%;
+    aspect-ratio: 1/1;
     display: inline-block;
+    position: relative;
+    margin: 5% 4% 2% 3%;
+    contain: content;
 }
 
 .cell3 {
-    width: 150px;
-    height: 150px;
-    position: relative;
-    margin: 40px 10px 10px 30px;
+    width: 25%;
+    aspect-ratio: 1/1;
     display: inline-block;
+    position: relative;
+    margin: 5% 3% 2% 3%;
+    contain: content;
 }
 
 .unclickable{
@@ -111,106 +270,113 @@ body {
 }
 
 .sideButtons {
-    width: 18%;
+    width: 17%;
     height: 70%;
     position: absolute;
     right: 0%;
     top: 20%;
     display: block;
+    background: transparent;
+}
+    
+.sideB:hover {
+    width:150%;
+    aspect-ratio: 1/1;
 }
 
-.res {
-    width: 80%;
-    height: 22%;
+.resNav {
+    width: 120%;
+    aspect-ratio: 1/1;
     position:relative;
     top: 20%;
+    background: transparent;
+}
+
+.cloNav {
+    width: 120%;
+    aspect-ratio: 1/1;
+    position:relative;
+    top: 20%;
+    background: transparent;
+}
+
+.res { 
+    width: 60%;
+    aspect-ratio: 1/1;
+    background: transparent;
+    position: absolute;
+    top: -28%;
+    right: 230%;
+    visibility: hidden;
+}
+
+.res:hover {
+    width: 80%;
+    aspect-ratio: 1/1;
 }
 
 .clo {
+    width: 60%;
+    aspect-ratio: 1/1;
+    background: transparent;
+    position: absolute;
+    top: -28%;
+    right: 180%;
+    visibility: visible;
+} 
+
+.clo:hover {
     width: 80%;
-    height: 22%;
-    position:relative;
-    top: 20%;
+    aspect-ratio: 1/1;
 }
 
 .message {
-    width: 960px;
-    height: 100px;
-    top: 20px;
-    position: relative;
+    width: 100%;
+    height: 20vh;
+    position: absolute;
+    bottom: 0%;
     margin: 0 auto;
-    background-color: #E44650;
 }
 
-.players {
-    width: 960px;
-    height: 100px;
-    margin: 0 auto;
-    display: inline-block;
-    background-color: #E44650;
-}
-
-.p1 {
-    width: 400px;
-    height: 80px;
-    display: inline-block;
+.textM {
+    width: 85%;
+    height: 40%;
     position: absolute;
-    left: 0px
-}
-.p2 {
-    width: 400px;
-    height: 80px;
-    display: inline-block;
-    position: absolute;
-    right: 0px
+    top: 18%;
+    right: 7%;
+    font-size: 7vh;
 }
 
-.px
-{
-    background: transparent;
-    border: none;
-}
-
-.po
-{
-    background: transparent;
-    border: none;
-}
-
-.header {
-    width: 960px;
-    height: 80px;
-    background-color: #E44650;
-    
-}
-
-.game {
-    width: 660px;
-    height: 80px;
-    position: absolute;
-    left: 0px;
-}
-
-.rounds {
-    width: 300px;
-    height: 80px;
-    position: absolute;
-    right: 0px;
-}
-
-.score {
-    width: 80px;
-    height: 80px;
-    position:relative;
-    margin: 0 auto;
-    display: inline-block;
-}
-
-.winScreen {
+.winImg {
     width: 100%;
     height: 19%;
     position: absolute;
-    top: 40%;
+    top: 38%;
     visibility: hidden;
-    background-color: #E44650;
+    z-index: 99;
+    
+}
+
+.winScreen {
+    height: 70%;
+    width: 70%;
+    display: block;
+    font-size: 6vh;
+    color: whitesmoke;
+    position: absolute;
+    top: 22%;
+    right: 15%;
+    visibility: inherit;
+    background: transparent;
+    visibility: hidden;
+}
+
+.winScreen {
+    animation: bounce 3s linear;
+    animation-iteration-count: infinite;
+}
+
+img {
+    width: 97%;
+    height: 97%;
 }

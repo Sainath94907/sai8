@@ -1,17 +1,13 @@
 
-
-
-let playerTurn = true
-
-
 const cells = {
     c1:'',c2:'',c3:'',
     c4:'',c5:'',c6:'',
-    c7:'',c8:'',c9:'', 
+    c7:'',c8:'',c9:'',
+    playerTurn : true,
     moves : 0,
     button: 0,
-    score1: 0,
-    score2: 0,
+    score1: '',
+    score2: '',
     round: 1,
     checkCells: function (){
         if ((this.c1 && this.c5 && this.c9) ||
@@ -22,10 +18,12 @@ const cells = {
             (this.c7 && this.c4 && this.c1) ||
             (this.c2 && this.c5 && this.c8) ||
             (this.c4 && this.c5 && this.c6)){
-            $('#prompter').text(`Congratulations ${$('#name1').val()}!`);
+            $('#promptM').text(`${$('#name1').val()} wins!`);
             $('.block').addClass('unclickable');
-            this.score1 += 1;
+            this.navSide();
+            this.score1 = Number(this.score1) + 1;
             $('#p1s').text(`${this.score1}`);
+            
         } else 
         if ((this.c1 === false && this.c5 === false && this.c9 === false) ||
             (this.c3 === false && this.c5 === false && this.c7 === false) ||
@@ -35,15 +33,16 @@ const cells = {
             (this.c7 === false && this.c4 === false && this.c1 === false) ||
             (this.c2 === false && this.c5 === false && this.c8 === false) ||
             (this.c4 === false && this.c5 === false && this.c6 === false)){
-            $('#prompter').text(`Congratulations ${$('#name2').val()}!`);
+            $('#promptM').text(`${$('#name2').val()} wins!`);
             $('.block').addClass('unclickable');
-            this.score2 += 1;
+            this.navSide();
+            this.score2 = Number(this.score2) + 1;
             $('#p2s').text(`${this.score2}`);
         } else
         if (this.moves === 8) {
-            $('#prompter').text(`Draw!`);
+            $('#promptM').text(`Draw!`);
             $('.block').addClass('unclickable');
-            
+            this.navSide();
         }
     },
     clearCells: function(){
@@ -57,33 +56,34 @@ const cells = {
     restartGame : function(){
         this.clearCells();
         this.round = 1;
-        this.score1 = 0;
-        this.score2 = 0;
+        this.score1 = '';
+        this.score2 = '';
+        $('#start').css('visibility', 'visible');
         $('.starter').css('visibility', 'visible');
         $('.container').addClass('offScreen');
         $('.block').addClass('unclickable');  
         $('#gameRounds').text('');
         $('#name1').val('');
         $('#name2').val('');
-        $('#prompter').text('');
+        $('#promptM').text('');
         $('.score').text('');
     },
     player1Turn : function(){
-        $('<img src="img/X.png" width="140">').appendTo(`#cell${this.button}`);
+        $('<img src="img/X.png">').appendTo(`#cell${this.button}`);
         $(`#cell${this.button}`).addClass('unclickable');
-        $('#prompter').text(`It's ${$('#name2').val()}'s turn!`)
+        $('#promptM').text(`It's ${$('#name2').val()}'s turn!`)
         cells.checkCells();
-        playerTurn = false;
+        this.playerTurn = false;
     },
     player2Turn : function(){
-        $('<img src="img/O.png" width="140">').appendTo(`#cell${this.button}`);
+        $('<img src="img/O.png">').appendTo(`#cell${this.button}`);
         $(`#cell${this.button}`).addClass('unclickable');
-        $('#prompter').text(`It's ${$('#name1').val()}'s turn!`);
+        $('#promptM').text(`It's ${$('#name1').val()}'s turn!`);
         cells.checkCells();
-        playerTurn = true;
+        this.playerTurn = true;
     },
     playerInput : function(){
-        if (playerTurn) {
+        if (this.playerTurn) {
             cells[`c${this.button}`] = true;
             cells.player1Turn();
             this.moves += 1;
@@ -96,7 +96,7 @@ const cells = {
     }, 
     nameCheck : function(){
         if ($('#name1').val() === '' || $('#name2').val() === ''){
-            $('#prompter').text('Welcome!\n Please enter your names first!');
+            $('#promptM').text(' Enter your names first!');
         } else { 
             this.whosFirst();
         }
@@ -104,33 +104,72 @@ const cells = {
     whosFirst : function(){
         $('.whosTurn').css('visibility', 'visible');
         $('input').addClass('unclickable');
+        $('.sideButtons').addClass('unclickable');
+        $('#promptM').text('Who goes first?!');
+        $('div').not('#prompter, #promptM, .game , .whosTurn ').addClass('offScreen');
+    
         
         $('#x').on('click', function(){
-            playerTurn = true;
-            $('#prompter').text(`It's ${$('#name1').val()}'s turn!`);       
+            cells.playerTurn = true;
+            $('#promptM').text(`It's ${$('#name1').val()}'s turn!`);       
             $('#gameRounds').text(`Round ${cells.round}`);
             $('.whosTurn').css('visibility', 'hidden');
+            $('.res').css('visibility', 'visible');
             $('.block').removeClass('unclickable');
+            $('.sideButtons').removeClass('unclickable');
+            $('div').removeClass('offScreen');
+
         });
         $('#o').on('click', function(){
-            playerTurn = false;
-            $('#prompter').text(`It's ${$('#name2').val()}'s turn!`);
+            cells.playerTurn = false;
+            $('#promptM').text(`It's ${$('#name2').val()}'s turn!`);
             $('#gameRounds').text(`Round ${cells.round}`);
             $('.whosTurn').css('visibility', 'hidden');
+            $('.res').css('visibility', 'visible');
             $('.block').removeClass('unclickable');
-            
+            $('.sideButtons').removeClass('unclickable');
+            $('div').removeClass('offScreen');
         });
     },
     whoWins : function(){
+        $('#promptM').text('');
+        if (this.score1 === '' && this.score2 ===''){
+            cells.restartGame()
+            $('input').removeClass('unclickable'); 
+            $('#winner').css('visibility', 'hidden');
+            $('.winImg').css('visibility', 'hidden');
+            $('#start').css('visibility', 'visible')
+        } else
         if (this.score1 > this.score2){
-            $('#winner').text(`${$('#name1').val()} IS THE WINNER!`);
+            $('.container').addClass('offScreen');
+            $('#winner').css('visibility', 'visible');
+            $('.winImg').css('visibility', 'visible');
+            $('#winner').text(`${($('#name1').val()).toUpperCase()} IS THE WINNER! ㋡`);
         } else
         if (this.score1 < this.score2){
-            $('#winner').text(`${$('#name2').val()} IS THE WINNER!`);
+            $('.container').addClass('offScreen');
+            $('#winner').css('visibility', 'visible');
+            $('.winImg').css('visibility', 'visible');
+            $('#winner').text(`${($('#name2').val()).toUpperCase()} IS THE WINNER! ㋡`);
         } else
-        if (this.score1 === this.score2){
-            $('#winner').text(`IT'S A DRAW!`);
+        if (Number(this.score1) === Number(this.score2)){
+            $('.container').addClass('offScreen');
+            $('#winner').css('visibility', 'visible');
+            $('.winImg').css('visibility', 'visible');
+            $('#winner').text(`IT'S A DRAW! ㋛ `);
         }
+    },
+    navSide : function(){
+        $('#restart').removeClass('res');
+        $('#restart').addClass('sideB resNav');
+        $('#close').removeClass('clo');
+        $('#close').addClass('sideB cloNav');
+    },
+    navTop : function(){
+        $('#restart').removeClass('resNav');
+        $('#restart').addClass('res');
+        $('#close').removeClass('cloNav');
+        $('#close').addClass('clo');
     }
 }
 

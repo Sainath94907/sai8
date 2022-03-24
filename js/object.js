@@ -9,7 +9,6 @@ $('#o').append('<img src="img/O.png">');
 $('.players').append('<img class="tokenx" src="img/X.png">');
 $('.players').append('<img class="tokeno" src="img/O.png">');
 
-
 $('.starter').on('click', function(){
     $('#start').css('visibility', 'hidden');
     $('.starter').css('visibility', 'hidden');

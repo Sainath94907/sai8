@@ -1,3 +1,11 @@
+Have a go:
+https://kendlc.github.io/Project0-Tictactoe/
+
+
+ReadMe coming soon:
+
+
+
 progress 2: working logic
 progress 3: shortened code
 progress 4: game done - fixing game visuals and initiation - adding features

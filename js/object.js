@@ -12,6 +12,7 @@ $('.players').append('<img class="tokeno" src="img/O.png">');
 $('.container').append('<audio id="bgmusic" src="audio/bg.wav" loop="loop"></audio>');
 $('.container').append('<audio id="touch" src="audio/touch.wav"></audio>');
 $('.container').append('<audio id="victory" src="audio/victory.wav"></audio>');
+$('.container').append('<audio id="kabuki" src="audio/kabuki.mp3"></audio>');
 
 
 $('.starter').on('click', function(){

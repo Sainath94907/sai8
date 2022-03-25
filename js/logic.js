@@ -19,6 +19,9 @@ const cells = {
             (this.c2 && this.c5 && this.c8) ||
             (this.c4 && this.c5 && this.c6)){
             $('#promptM').text(`${$('#name1').val()} wins!`);
+            $('#kabuki')[0].volume = 0.4;
+            $('#kabuki')[0].playbackRate = 2;
+            $('#kabuki')[0].play();
             $('.block').addClass('unclickable');
             this.navSide();
             this.score1 = Number(this.score1) + 1;
@@ -35,6 +38,9 @@ const cells = {
             (this.c4 === false && this.c5 === false && this.c6 === false)){
             $('#promptM').text(`${$('#name2').val()} wins!`);
             $('.block').addClass('unclickable');
+            $('#kabuki')[0].volume = 0.4;
+            $('#kabuki')[0].playbackRate = 3;
+            $('#kabuki')[0].play();
             this.navSide();
             this.score2 = Number(this.score2) + 1;
             $('#p2s').text(`${this.score2}`);

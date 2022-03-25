@@ -94,7 +94,6 @@ $('#close').on('click', function(){
     cells.navTop();
     cells.whoWins();
     $('#restart').css('visibility','hidden');
-    
 });
 
 $('#winner').on('click', function(){

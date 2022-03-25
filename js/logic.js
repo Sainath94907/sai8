@@ -138,7 +138,9 @@ const cells = {
             $('input').removeClass('unclickable'); 
             $('#winner').css('visibility', 'hidden');
             $('.winImg').css('visibility', 'hidden');
-            $('#start').css('visibility', 'visible')
+            $('#start').css('visibility', 'visible');
+            $('#bgmusic')[0].pause();
+            $('#bgmusic')[0].currentTime = 0;
         } else
         if (this.score1 > this.score2){
             $('.container').addClass('offScreen');

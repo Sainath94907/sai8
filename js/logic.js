@@ -179,10 +179,3 @@ const cells = {
 
 
 
-
-
-//function to randomly choose which player goes first / if else Math.Random
-
-
-
-

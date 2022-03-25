@@ -1,3 +1,4 @@
+
 $('#restart').append('<img src="img/restart.png">');
 $('#close').append('<img src="img/close.png">');
 $('#prompter').append('<img src="img/banner.png">');
@@ -8,6 +9,10 @@ $('#x').append('<img src="img/X.png">');
 $('#o').append('<img src="img/O.png">');
 $('.players').append('<img class="tokenx" src="img/X.png">');
 $('.players').append('<img class="tokeno" src="img/O.png">');
+$('.container').append('<audio id="bgmusic" src="audio/bg.wav" loop="loop" volume="-5000"></audio>');
+$('.container').append('<audio id="touch" src="audio/touch.wav"></audio>');
+$('.container').append('<audio id="victory" src="audio/victory.wav"></audio>');
+
 
 $('.starter').on('click', function(){
     $('#start').css('visibility', 'hidden');
@@ -15,7 +20,20 @@ $('.starter').on('click', function(){
     $('.container').removeClass('offScreen');
     $('.block').addClass('unclickable');
     cells.nameCheck();
+    $('#bgmusic')[0].volume = 0.1;
+    $('#bgmusic')[0].playbackRate = 0.9;
+    $('#bgmusic')[0].play();
 })
+
+$('.block').on('click', function(){
+    $('#touch')[0].play();
+    $('#touch')[0].playbackRate = 3;
+});
+
+$('button').on('click', function(){
+    $('#touch')[0].play();
+    $('#touch')[0].playbackRate = 2;
+});
 
 $('input').on('focusout', function(){
     cells.nameCheck();
@@ -76,6 +94,7 @@ $('#close').on('click', function(){
     cells.navTop();
     cells.whoWins();
     $('#restart').css('visibility','hidden');
+    
 });
 
 $('#winner').on('click', function(){
@@ -83,6 +102,10 @@ $('#winner').on('click', function(){
         $('input').removeClass('unclickable'); 
         $('.winImg').css('visibility', 'hidden');
         $('#winner').css('visibility', 'hidden');
+        $('#victory')[0].pause();
+        $('#victory')[0].currentTime = 0;
+        $('#bgmusic')[0].pause();
+        $('#bgmusic')[0].currentTime = 0;
 });
 
 

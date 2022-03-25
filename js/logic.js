@@ -145,12 +145,14 @@ const cells = {
             $('#winner').css('visibility', 'visible');
             $('.winImg').css('visibility', 'visible');
             $('#winner').text(`${($('#name1').val()).toUpperCase()} IS THE WINNER! ㋡`);
+            $('#victory')[0].play();
         } else
         if (this.score1 < this.score2){
             $('.container').addClass('offScreen');
             $('#winner').css('visibility', 'visible');
             $('.winImg').css('visibility', 'visible');
             $('#winner').text(`${($('#name2').val()).toUpperCase()} IS THE WINNER! ㋡`);
+            $('#victory')[0].play();
         } else
         if (Number(this.score1) === Number(this.score2)){
             $('.container').addClass('offScreen');

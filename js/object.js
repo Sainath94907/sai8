@@ -9,7 +9,7 @@ $('#x').append('<img src="img/X.png">');
 $('#o').append('<img src="img/O.png">');
 $('.players').append('<img class="tokenx" src="img/X.png">');
 $('.players').append('<img class="tokeno" src="img/O.png">');
-$('.container').append('<audio id="bgmusic" src="audio/bg.wav" loop="loop" volume="-5000"></audio>');
+$('.container').append('<audio id="bgmusic" src="audio/bg.wav" loop="loop"></audio>');
 $('.container').append('<audio id="touch" src="audio/touch.wav"></audio>');
 $('.container').append('<audio id="victory" src="audio/victory.wav"></audio>');
 

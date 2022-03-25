@@ -1,5 +1,12 @@
-
-
+progress 2: working logic
+progress 3: shortened code
+progress 4: game done - fixing game visuals and initiation - adding features
+progress 5: restart and close buttons / name input and display / round and score display
+progress 6: choosing which player goes first / winner screen after ending game
+progress 7: visuals / added image background and buttons
+progress 7: add bouncing animation on hover and iteration/ fixed sizing to fit any desktop screens / fixed header and vh on board and footer
+progress 7: added transitions
+Progress 8: added bg music / victory sound/ button sounds
 
 
 

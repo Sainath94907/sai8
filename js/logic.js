@@ -148,6 +148,7 @@ const cells = {
             $('.winImg').css('visibility', 'visible');
             $('#winner').text(`${($('#name1').val()).toUpperCase()} IS THE WINNER! ㋡`);
             $('#victory')[0].play();
+            $('#victory')[0].volume = 0.4;
         } else
         if (this.score1 < this.score2){
             $('.container').addClass('offScreen');
@@ -155,6 +156,7 @@ const cells = {
             $('.winImg').css('visibility', 'visible');
             $('#winner').text(`${($('#name2').val()).toUpperCase()} IS THE WINNER! ㋡`);
             $('#victory')[0].play();
+            $('#victory')[0].volume = 0.4;
         } else
         if (Number(this.score1) === Number(this.score2)){
             $('.container').addClass('offScreen');

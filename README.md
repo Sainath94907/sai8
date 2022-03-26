@@ -34,7 +34,7 @@ A simple Tictactoe game that gives off a nice and responsive interface for users
 
 ### In-game Photos
 
-![Start screen](img/readme/ss1.png = x500)
+![Start screen](img/readme/ss1.png =x500)
 
 
 

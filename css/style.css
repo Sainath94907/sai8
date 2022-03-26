@@ -10,11 +10,6 @@
     transition-property: opacity, transform;
 }
 
-button {
-    border: none;
-    outline: none;
-}
-
 @keyframes bounce {
     0%, 25%, 50%, 75%, 90%, 100% {
     transform: translateY(0); }
@@ -26,6 +21,8 @@ button {
     transform: translateY(-5px); } }
 
 button {
+    border: none;
+    outline: none;
     animation: bounce 5s linear;
     animation-iteration-count: infinite;
 }

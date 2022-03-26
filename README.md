@@ -1,11 +1,55 @@
-Have a go:
-https://kendlc.github.io/Project0-Tictactoe/
+## [Click me and have a Go! XO](https://kendlc.github.io/Project0-Tictactoe/)
+
+# TicTacToe - Project0
+=======================
+
+## Technologies:
+* HTML
+* CSS
+* JavaScript
+
+### DOM Manipulation
+* jQuery
+
+## About
+
+A simple Tictactoe game that gives off a nice and responsive interface for users to enjoy.
+
+### Features
+* *Start Screen*
+* *Player Name Inputs*
+* *Token Option* _:let players choose who goes first_
+* *Game Round Counter*
+* *Score Display*
+* *Message Display* _:prompts player turns, and round winner_
+* *Rematch Button*  _:starts another round_
+* *Close Button* _:ends the game_
+* *Winner Screen* _:tallies score and displays game winner upon clicking close button_
+* *Display Transition and Animation*
+* *Bouncing Button Animations*
+* *Background Music*
+* *Button Sounds*
+* *Game board Sounds*
+* *Screen size adaptability* _:can resize to computer screens (minimum : 1080p x 720p)_
+
+### In-game Photos
+
+![Start screen](img/readme/ss1.png = x500)
 
 
-ReadMe coming soon:
 
 
 
+<!-- ### Approach
+In making this game, my thoughts were to make a product that would atleast compare to Tictactoe apps and games on the market and provide a very nice experience to users. For this reason, I decide focus on interactivity, responsiveness, and the visuals of the game. -->
+
+
+
+
+
+### Approach
+
+My
 progress 2: working logic
 progress 3: shortened code
 progress 4: game done - fixing game visuals and initiation - adding features

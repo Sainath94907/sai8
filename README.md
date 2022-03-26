@@ -16,25 +16,26 @@
 A simple Tictactoe game that gives off a nice and responsive interface for users to enjoy.
 
 ### Features
-* *Start Screen*
-* *Player Name Inputs*
-* *Token Option* _:let players choose who goes first_
-* *Game Round Counter*
-* *Score Display*
-* *Message Display* _:prompts player turns, and round winner_
-* *Rematch Button*  _:starts another round_
-* *Close Button* _:ends the game_
-* *Winner Screen* _:tallies score and displays game winner upon clicking close button_
-* *Display Transition and Animation*
-* *Bouncing Button Animations*
-* *Background Music*
-* *Button Sounds*
-* *Game board Sounds*
-* *Screen size adaptability* _:can resize to computer screens (minimum : 1080p x 720p)_
+* **Start Screen**
+* **Player Name Inputs**
+* **Token Option** _:let players choose who goes first_
+* **Game Round Counter**
+* **Score Display**
+* **Message Display** _:prompts player turns, and round winner_
+* **Rematch Button**  _:starts another round_
+* **Close Button** _:ends the game_
+* **Winner Screen** _:tallies score and displays game winner upon clicking close button_
+* **Display Transition and Animation**
+* **Bouncing Button Animations**
+* **Background Music**
+* **Button Sounds**
+* **Winner Sounds**
+* **Game board Sounds**
+* **Screen size adaptability** _:can resize to computer screens (minimum : 1080p x 720p)_
 
 ### In-game Photos
 
-![Start screen](img/readme/ss1.png =x500)
+![Start screen](img/readme/ss1.png)
 
 
 

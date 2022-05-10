@@ -33,6 +33,14 @@ A simple Tictactoe game that gives off a nice and responsive interface for users
 * **Game board Sounds**
 * **Screen size adaptability** _:can resize to computer screens (minimum : 1080p x 720p)_
 
+
+### Approach
+In making the game, I made sure to finish the game logic and functions first. Afterwards, I planned out the features that I wanted in the game and then made the game layout. Lastly, I finished the project with adding the visuals, transitions, animations, and sounds. 
+
+Subsequently, for each feature that I added, I made sure that the feature is debugged (e.g. when choosing token on who goes first, everything else on the screen is unclickable) before moving on to adding the next feature for easier debugging.
+
+As for my code, I separated my logic functions into `logic.js` and event handers in `object.js` to keep my codes tidy and easier to read. 
+
 ### In-game Photos
 
 ![Start screen](img/readme/ss1.png)
@@ -42,10 +50,4 @@ A simple Tictactoe game that gives off a nice and responsive interface for users
 ![Winner screen](img/readme/ss5.png)
 
 
-### Approach
-In making the game, I made sure to finish the game logic and functions first. Afterwards, I planned out the features that I wanted in the game and then made the game layout. Lastly, I finished the project with adding the visuals, transitions, animations, and sounds. 
-
-Subsequently, for each feature that I added, I made sure that the feature is debugged (e.g. when choosing token on who goes first, everything else on the screen is unclickable) before moving on to adding the next feature for easier debugging.
-
-As for my code, I separated my logic functions into `logic.js` and event handers in `object.js` to keep my codes tidy and easier to read. 
 
